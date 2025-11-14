@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情侣/好友角色扮演游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>角色扮演游戏</h1>
+            <p class="subtitle">为情侣/好友打造的趣味互动体验</p>
+        </header>
+
+        <main>
+            <div class="intro">
+                <p>点击按钮随机获取两个有趣的角色身份，开始你们的角色扮演之旅吧！</p>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">
+                <span class="btn-text">选择身份</span>
+            </button>
+
+            <div id="rolesContainer" class="roles-container">
+                <div class="role-card" id="roleCard1">
+                    <div class="role-header">
+                        <h2 class="role-name">角色名称</h2>
+                    </div>
+                    <div class="role-content">
+                        <p class="role-description">角色介绍</p>
+                        <div class="dialogues">
+                            <div class="dialogue-item">
+                                <span class="dialogue-label">开心时：</span>
+                                <p class="dialogue-happy">开心语录</p>
+                            </div>
+                            <div class="dialogue-item">
+                                <span class="dialogue-label">不开心时：</span>
+                                <p class="dialogue-sad">不开心语录</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role-card" id="roleCard2">
+                    <div class="role-header">
+                        <h2 class="role-name">角色名称</h2>
+                    </div>
+                    <div class="role-content">
+                        <p class="role-description">角色介绍</p>
+                        <div class="dialogues">
+                            <div class="dialogue-item">
+                                <span class="dialogue-label">开心时：</span>
+                                <p class="dialogue-happy">开心语录</p>
+                            </div>
+                            <div class="dialogue-item">
+                                <span class="dialogue-label">不开心时：</span>
+                                <p class="dialogue-sad">不开心语录</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 角色扮演游戏 - 为你们的关系增添乐趣</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

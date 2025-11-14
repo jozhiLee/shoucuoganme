@@ -1,0 +1,305 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ff4757;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #747d8c;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #57606f;
+}
+
+.generate-btn {
+    display: block;
+    margin: 0 auto 40px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 1;
+}
+
+.generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.generate-btn:hover::before {
+    left: 100%;
+}
+
+.roles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.roles-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.role-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.role-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff6b6b, #ff9ff3);
+}
+
+.role-card:nth-child(2)::before {
+    background: linear-gradient(to bottom, #5f27cd, #0abde3);
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.role-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f2f6;
+}
+
+.role-name {
+    font-size: 1.8rem;
+    color: #2f3542;
+    font-weight: bold;
+}
+
+.role-content {
+    text-align: left;
+}
+
+.role-description {
+    font-size: 1rem;
+    color: #747d8c;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.dialogues {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dialogue-item {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f1f2f6;
+}
+
+.dialogue-label {
+    font-weight: bold;
+    color: #2f3542;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dialogue-happy {
+    color: #10ac84;
+    font-style: italic;
+}
+
+.dialogue-sad {
+    color: #ee5a24;
+    font-style: italic;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    text-align: center;
+    color: #747d8c;
+    font-size: 0.9rem;
+    border-top: 1px solid #e74c3c;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.role-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.role-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.role-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .role-card {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .generate-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    
+    .role-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .intro p {
+        font-size: 1rem;
+    }
+    
+    .role-card {
+        padding: 15px;
+    }
+    
+    .role-name {
+        font-size: 1.3rem;
+    }
+    
+    .roles-container {
+        gap: 20px;
+    }
+}
+
+/* 加载动画 */
+.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
